@@ -1,0 +1,50 @@
+/*result finding style---------------*/
+.findsCities{
+    color: orange;
+    font-weight: bold;
+}
+.weatherDescription{
+    font-weight: bold;
+    font-style: italic;
+    color: lightgray;
+}
+
+.findsCitiesTemp{
+    margin: 4px;
+    background: lightgrey;
+    padding: 1px 7px 1px 7px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.searchOtherProperty{
+    margin: 2px;
+}
+.searchCountry{
+    margin: 4px;
+}
+
+/*extra property city*/
+.extraPropCountrName{
+    font-size: 30px;
+}
+.tempTable{
+    border:  1px solid #ccc;
+    color: #323232;
+    border-collapse: collapse;
+}
+
+.tempTable tr:nth-child(2n+1){
+    background: lightgrey;
+}
+.tempTable td{
+    border: 1px solid #ccc;
+}
+
+.extraParameters{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

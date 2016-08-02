@@ -1,0 +1,13 @@
+<div ng-show="stateStatus">
+    <div ng-show="!vm.citiesCollection.includes(city.id)">
+        <form ng-submit="addCityUser(city.id)">
+            <button type="submit" class="addDeleteButton addButton"><i class="fa fa-plus plusMinus"></i>Add city</button>
+        </form>
+    </div>
+
+    <div ng-show="vm.citiesCollection.includes(city.id)">
+        <form ng-submit="deleteCityUser(city.id)">
+            <button type="submit" class="addDeleteButton deleteButton"><i class="fa fa-minus plusMinus"></i>Delete city</button>
+        </form>
+    </div>
+</div>

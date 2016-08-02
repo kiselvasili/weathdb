@@ -1,0 +1,45 @@
+<div class="searchCityBig" >
+    <form ng-submit="search()" id="searchC">
+        <input ng-model="searchTerm" placeholder="Enter city" class="searchCity">
+        <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+        </button>
+    </form>
+</div>
+
+<div ng-if="vm.count">
+    Not found
+</div>
+
+<div ng-repeat="city in vm.cities" class="searchInfo">
+    <hr>
+    <div class="flexDirect">
+        <search-output-direct></search-output-direct>
+
+        <add-delete-button-direct></add-delete-button-direct>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<div>
+    &lt;!&ndash;<search-output-direct ng-repeat="city in vm.cities" class="searchInfo"></search-output-direct>&ndash;&gt;
+    <search-output-direct>
+    </search-output-direct>
+
+</div>
+-->

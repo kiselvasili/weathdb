@@ -1,0 +1,67 @@
+<h2 class="colortext">Weather in your city</h2>
+
+<hr class="justLine">
+
+
+
+    <div class="extraParametersStyle">
+        <div class="extraParametersTable">
+
+            <div class="tempTitle">
+                <div class="extraPropCountrName">
+                    {{vm.otherParams.sys.country}},{{vm.otherParams.name}}
+                </div>
+
+                <div class="extraPropCountrTemp">
+                    {{(vm.otherParams.main.temp-273).toFixed(1)}} °C
+                </div>
+            </div>
+
+            <div class="tableToParameters">
+                <table class="tempTable">
+                    <tr>
+                        <td >Wind</td>
+                        <td >{{vm.otherParams.wind.speed}} m/s</td>
+                    </tr>
+                    <tr>
+                        <td >Cloudiness</td>
+                        <td >{{vm.otherParams.clouds.all}} %</td>
+                    </tr>
+                    <tr>
+                        <td >Rressure</td>
+                        <td >{{vm.otherParams.main.pressure}} hpa</td>
+                    </tr>
+                    <tr>
+                        <td >Humidity</td>
+                        <td >{{vm.otherParams.main.humidity}} %</td>
+                    </tr>
+                    <tr>
+                        <td>Sunrise</td>
+                        <td >{{vm.sunriseHours}}:{{vm.sunriseMinutes}}</td>
+                    </tr>
+                    <tr>
+                        <td>Sunset</td>
+                        <td>{{vm.sunsetHours}}:{{vm.sunsetMinutes}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="tempDiagram extraParametersTable">
+            <canvas id="bar" style="height: 300px;width: 500px">
+            </canvas>
+        </div>
+
+    </div>
+
+    <div  class="tempTo3Hours">
+        <div ng-repeat="tempDate in vm.listTemp">
+            <!--<p>{{tempDate.dt_txt}} : {{tempDate.dt}}</p>-->
+        </div>
+    </div>
+
+
+
+
+
+

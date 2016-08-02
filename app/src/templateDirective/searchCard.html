@@ -1,0 +1,37 @@
+<div class="proverka">
+    <span class="weatherIcon">
+        <img src="http://openweathermap.org/img/w/{{city.weather[0].icon}}.png" alt="">
+    </span>
+
+    <span>
+        <div class="searchCountry" ng-if="city">
+                    <span>
+                        <a ui-sref="TempToOneCity({ cityId:city.id })" class="linkCity">
+                            <span class="findsCities">
+                                {{city.name}}, {{city.sys.country}}
+                            </span>
+                            <img src="http://openweathermap.org/images/flags/{{city.sys.country.toLowerCase()}}.png" alt="">
+                        </a>
+                    </span>
+                    <span class="weatherDescription">
+                        {{city.weather["0"].description}}
+                    </span>
+        </div>
+        <div class="searchOtherProperty">
+                    <span class="findsCitiesTemp">
+                        {{(city.main.temp-273).toFixed(1)}}
+                    </span>
+                    <span>
+                        temperature from {{(city.main.temp_min-273).toFixed(1)}} to {{(city.main.temp_max-273).toFixed(1)}}, wind {{city.wind.speed}}m/s. clouds {{city.clouds.all}}%, {{city.main.pressure}} hpa
+                    </span>
+        </div>
+    </span>
+</div>
+
+
+
+
+
+
+
+

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" href="../node_modules/angular-loading-bar/build/loading-bar.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+
+    <link rel="stylesheet" href="styles/angular-loading-bar.css">
+    <link rel="stylesheet" href="styles/buttons.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/placeholders.css">
+    <link rel="stylesheet" href="styles/content-item.css">
+
+
+
+
+</head>
+<body ng-app="weatherapp" class="body-class">
+
+
+
+<header class="header-class" ng-controller="AppCtrl">
+    <div class="wraper">
+
+        <ul class="loginRegLogout">
+
+            <li class="loginAndReg">
+                <a ui-sref="main" class="weatherSearch">
+                    <img src="img/pSjRf4JN.inettools.net.crop.image.png" alt="" class="logo">
+                </a>
+            </li>
+
+        </ul>
+
+        <ul class="loginRegLogout">
+
+            <!--<li class="loginAndReg loginAndRegHover" ng-show="!stateStatus">
+                <a ui-sref="login"><i class="fa fa-sign-in icon"></i>Login</a>
+            </li>
+
+            <li class="loginAndReg loginAndRegHover" ng-show="!stateStatus">
+                <a ui-sref="register"><i class="fa fa-user-plus icon"></i>Register</a>
+            </li>
+
+            <li class="loginAndReg loginAndRegHover" ng-show="stateStatus">
+                <a href="#" ng-click="signout()"><i class="fa fa-sign-out icon"></i>Logout</a>
+            </li>-->
+
+           <!-- <li class="loginAndReg loginAndRegHover" ng-show="stateStatus">
+                <a ui-sref="myCities"><i class="fa fa-user icon"></i>My cities</a>
+            </li>-->
+
+
+
+                <a ui-sref="login" class="loginAndReg loginAndRegHover" ng-show="!stateStatus">
+                    <li class="transitionHover">
+                    <i class="fa fa-sign-in icon"></i>Login
+                    </li>
+                </a>
+
+                <a ui-sref="register" class="loginAndReg loginAndRegHover" ng-show="!stateStatus">
+                    <li>
+                    <i class="fa fa-user-plus icon"></i>Register
+                    </li>
+                </a>
+
+                <a href="#" ng-click="signout()" class="loginAndReg loginAndRegHover" ng-show="stateStatus">
+                    <li>
+                    <i class="fa fa-sign-out icon"></i>Logout
+                    </li>
+                </a>
+
+
+
+            <a ui-sref="myCities" class="loginAndReg loginAndRegHover" ng-show="stateStatus">
+                <li>
+                    <i class="fa fa-user icon"></i>My cities
+                </li>
+            </a>
+
+
+
+
+        </ul>
+    </div>
+</header>
+
+
+
+<section class="sectionContent">
+        <section ui-view=></section>
+</section>
+
+<footer></footer>
+
+<script src="../node_modules/angular/angular.js"></script>
+<script src="../node_modules/angular-aria/angular-aria.js"></script>
+<script src="../node_modules/angular-animate/angular-animate.js"></script>
+<script src="../node_modules/angular-material/angular-material.min.js"></script>
+<script src="../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="../node_modules/angular-loading-bar/build/loading-bar.min.js"></script>
+
+<script src="../node_modules/chart.js/Chart.js"></script>
+
+<!--<script src="../bower_components/Chart.js/dist/Chart.js"></script>-->
+<!--<script src="../bower_components/ng-chartjs/dist/angular-chartjs.js"></script>-->
+
+<script src="src/app.js"></script>
+
+
+
+<script src="src/pages/main/controllers/SearchCityCtrl.js"></script>
+<script src="src/pages/main/services/SearchCitySvc.js"></script>
+<script src="src/pages/main/services/ExampleSvc.js"></script>
+
+<script src="src/pages/temptocity/tempCity.js"></script>
+<script src="src/pages/temptocity/controllers/TempCityCtrl.js"></script>
+<script src="src/pages/temptocity/services/TempCitySvc.js"></script>
+<script src="src/pages/temptocity/services/OtherParamCitySvc.js"></script>
+
+
+
+<script src="src/directives/searchOutputDirect.js"></script>
+<script src="src/directives/addDeleteButtonDirect.js"></script>
+<script src="src/directives/errorMessageDirect.js"></script>
+
+
+<script src="src/pages/login/controllers/loginCtrl.js"></script>
+
+<script src="src/pages/register/controllers/registerCtrl.js"></script>
+
+<script src="src/pages/myCities/controllers/myCitiesCtrl.js"></script>
+<script src="src/pages/myCities/services/myCitiesDataSvc.js"></script>
+
+
+<script src="src/controllers/AppCtrl.js"></script>
+
+<script src="src/services/AuthService.js"></script>
+<script src="src/constants/constants.js"></script>
+
+<script src="src/pages/main/services/addCitiesSvc.js"></script>
+<script src="src/pages/main/services/deleteCitiesSvc.js"></script>
+
+<script src="src/pages/main/services/getCitiesCollectionSvc.js"></script>
+
+
+
+
+</body>
+</html>

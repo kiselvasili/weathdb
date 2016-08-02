@@ -1,0 +1,22 @@
+/*placeholder search city*/
+.searchCityBig{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+}
+
+.searchCity{
+    height: 40px;
+    border: 1px solid orange;
+    padding: 1px 10px 1px 10px;
+    border-radius: 5px;
+    box-shadow: #2095a0;
+    outline: none;
+    margin: 5px;
+}
+
+.searchCity:focus{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: 0.5s;
+}

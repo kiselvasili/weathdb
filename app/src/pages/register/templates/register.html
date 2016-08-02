@@ -1,0 +1,9 @@
+<div class="searchCityBig">
+    <form ng-submit="register()" id="searchC">
+        <input type="username" ng-model="user.name" placeholder="Username" class="form-control searchCity" required><br>
+        <input type="password" ng-model="user.password" placeholder="Password" class="form-control searchCity" required><br>
+        <input type="text" ng-model="user.nickname" placeholder="Nickname" class="form-control searchCity" required required><br>
+        <error-message-direct  ng-show="vm.errMsg"></error-message-direct>
+        <button type="submit" value="Sign up" class="loginRegButton">Sign up</button>
+    </form>
+</div>

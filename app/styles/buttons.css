@@ -1,0 +1,71 @@
+
+/*search button-------------------------*/
+.searchButton{
+    color: #014b80;
+    height: 40px;
+    width: 40px;
+    border: none;
+    background: none;
+    transition: 0.5s;
+}
+
+.searchButton:hover{
+    color: #ffc22d;
+}
+
+.searchButton:focus{
+    box-shadow: none;
+    outline: none;
+}
+
+/*login, register, logout, my cities header button---------------------*/
+.loginAndRegHover {
+    transition: 2s;
+}
+
+.loginAndRegHover:hover{
+    background: linear-gradient(to top, rgba(255, 253, 254, 0.82), rgba(208, 211, 25, 0.82));
+}
+
+/*add delete button--------------------*/
+.addDeleteButton{
+    border: none;
+    background: none;
+    transition: 0.5s;
+    font-weight: bold;
+    width: 115px;
+    box-shadow: none;
+    outline: none;
+}
+
+.addButton{
+    color: rgba(4, 137, 0, 1);
+}
+
+.deleteButton{
+    color: rgb(221, 0, 4);
+}
+
+.plusMinus{
+    padding: 4px;
+}
+
+/*login register form button-------------------*/
+
+.loginRegButton{
+    color: #014b80;
+    background: rgb(206, 238, 244);
+    margin: 5px;
+    height: 40px;
+    border: 1px solid #0b97c4;
+    padding: 1px 50px 1px 10px;
+    border-radius: 5px;
+    box-shadow: #2095a0;
+    outline: none;
+    transition: 0.5s;
+}
+
+.loginRegButton:hover{
+    background: #0b97c4;
+    color: #cdf4f2;
+}

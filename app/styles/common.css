@@ -1,0 +1,33 @@
+/*links-------------------------*/
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: #014b80;
+}
+
+a:active{
+    color: #014b80;
+}
+
+a:focus{
+    box-shadow: none;
+    outline: none;
+}
+                    /*register extra property-------------*/
+.loginAndReg{
+    cursor: pointer;
+    color: #014b80;
+}
+
+/*icons----------------------------*/
+.icon{
+    color: #014b80;
+    padding: 0 4px 0 0;
+}
+
+/*color text-----------------------*/
+.colortext{
+    color: #014b80;
+}

@@ -1,0 +1,76 @@
+.body-class{
+    /*width: 66%;*/
+    min-width: 500px;
+    margin: auto;
+}
+
+.justLine{
+    border: none;
+    color: lightgray;
+    background-color: lightgrey;
+    height: 1px;
+}
+
+.loginAndReg{
+    list-style: none;
+    /*margin: 10px;*/
+    height: 100px;
+    width: 85px;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginRegLogout{
+    display: flex;
+    margin: 0px;
+    height: auto;
+}
+
+.wraper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /*flex-wrap: wrap;*/
+}
+
+
+.proverka{
+    display: flex;
+    flex-direction: row;
+}
+
+.sectionContent{
+    width: 60%;
+    margin: auto;
+}
+
+.flexDirect{
+    display: flex;
+    flex-direction: row;
+    /*flex-wrap: wrap;*/
+    justify-content: space-between;
+    align-items: center;
+}
+
+.extraParametersStyle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.extraParametersTable{
+    margin: 20px;
+}
+
+.errorMessage{
+    border:1px solid red;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    width: 205px;
+    background: rgba(255, 188, 191, 1);
+}
