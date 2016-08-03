@@ -13,26 +13,26 @@
     "angular": "^1.5.5",
     "angular-animate": "^1.5.5",
     "angular-aria": "^1.5.5",
+    "angular-loading-bar": "^0.9.0",
     "angular-material": "^1.0.8",
     "angular-messages": "^1.5.5",
     "angular-mocks": "^1.5.5",
     "angular-route": "^1.5.5",
     "angular-sanitize": "^1.5.5",
     "angular-ui-router": "^0.2.18",
+    "bcrypt": "^0.8.5",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
     "chart.js": "^1.0.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
     "express-session": "^1.14.0",
+    "jwt-simple": "^0.3.1",
     "mongoose": "^4.5.5",
     "morgan": "^1.7.0",
     "passport": "^0.3.2",
+    "passport-jwt": "^1.2.1",
     "passport-local": "^1.0.0",
-    "path": "^0.12.7",
-
-    "bcrypt": "^0.8.5",
-    "jwt-simple": "^0.3.1",
-    "passport-jwt": "^1.2.1"
+    "path": "^0.12.7"
   }
 }
