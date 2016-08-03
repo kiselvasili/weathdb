@@ -3,21 +3,22 @@
  */
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser');
-var morgan = require('morgan');
-var mongoose = require('mongoose');
-var passport = require('passport');
-var config = require('./server/database');
-var User = require('./server/app/models/user'); // get the mongoose model
+//var bodyParser = require('body-parser');
+//var morgan = require('morgan');
+//var mongoose = require('mongoose');
+//var passport = require('passport');
+//var config = require('./server/database');
+//var User = require('./server/app/models/user'); // get the mongoose model
+//var jwt = require('jwt-simple');
 
 
 var port = process.env.PORT || 8080;
 
-var jwt = require('jwt-simple');
 
 
 app.set('port', port);
 app.use(express.static(__dirname + '/app'));
+/*
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -205,9 +206,10 @@ getToken = function (headers) {
 };
 
 
-// connect the api routes under /api/*
+// connect the api routes under /api/!*
 app.use('/api', apiRoutes);
 
+*/
 
 // Start the server
 app.listen(port);
