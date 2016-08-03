@@ -7,17 +7,17 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
 var passport = require('passport');
-var config = require('./database');
-var User = require('./app/models/user'); // get the mongoose model
+var config = require('./server/database');
+var User = require('./server/app/models/user'); // get the mongoose model
 
 
 var port = process.env.PORT || 8080;
 
-app.set('port', port);
-app.use(express.static(__dirname + '/public'));
-
 var jwt = require('jwt-simple');
 
+
+app.set('port', port);
+app.use(express.static(__dirname + '/app'));
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -52,7 +52,7 @@ app.get('/', function (req, res) {
 mongoose.connect(config.database);
 
 
-require('./app/config/passport')(passport);
+require('./server/app/config/passport')(passport);
 
 // bundle our routes
 var apiRoutes = express.Router();
