@@ -1,11 +1,19 @@
-<h2 class="colortext">My cities</h2>
+<h2 ng-show="vm.citiesCollection.length" class="colortext">My cities</h2>
+
+<h2 ng-hide="vm.citiesCollection.length" class="colortext">No selected cities</h2>
 
 <div ng-repeat="city in vm.list" class="searchInfo">
-    <hr class="justLine">
-    <div class="flexDirect">
 
-        <search-output-direct></search-output-direct>
+    <div ng-show="vm.citiesCollection.includes(city.id)">
+        <hr class="justLine">
 
-        <add-delete-button-direct></add-delete-button-direct>
+        <div class="flexDirect">
+
+            <search-output-direct></search-output-direct>
+
+            <add-delete-button-direct></add-delete-button-direct>
+        </div>
     </div>
+
+
 </div>

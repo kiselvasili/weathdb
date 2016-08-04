@@ -20,11 +20,11 @@
 
 /*login, register, logout, my cities header button---------------------*/
 .loginAndRegHover {
-    transition: 2s;
+    transition: 0.6s;
 }
 
 .loginAndRegHover:hover{
-    background: linear-gradient(to top, rgba(255, 253, 254, 0.82), rgba(208, 211, 25, 0.82));
+    background: #f4ffc3;
 }
 
 /*add delete button--------------------*/
