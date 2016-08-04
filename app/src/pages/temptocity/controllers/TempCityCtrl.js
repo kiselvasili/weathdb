@@ -6,13 +6,15 @@ angular.module('weatherapp')
         var vm = this;
         TempCitySvc.getFullData($stateParams.cityId)
             .then(function (res) {
+                console.log(res);
                 vm.listTemp = res.list;
                 console.log('hello55');
                 console.log(res.list);
+                vm.myCity=res.city.name;
                 var infToDay = res.list.slice(0, 8);
                 // var infToDay = res.list;
                 console.log(res.list[1]);
-                vm.xew = infToDay.map(x=>(x.main.temp - 273).toFixed(1));
+                vm.xew = infToDay.map(x=>(Math.round((x.main.temp - 273)*100)/100));     //x.main.temp - 273
                 //vm.yew = infToDay.map(x=>x.rain === undefined ? 0 : x.rain['3h'] === undefined ? 0 : x.rain['3h']);
                 vm.yew = infToDay.map(function (x) {
                     if (x.rain === undefined) {
@@ -35,7 +37,7 @@ angular.module('weatherapp')
                 console.log(vm.xew);
 
 
-                var barData = {
+                /*var barData = {
                     labels: vm.label,
                     datasets: [{
                         label: "2000",
@@ -71,11 +73,102 @@ angular.module('weatherapp')
                         scalePositionLeft: true,
                         scaleFontColor: "rgba(204, 90, 3,0.8)"
                     }]
-                };
+                };*/
 
 
-                var income = document.getElementById("bar").getContext("2d");
-                new Chart(income).Line(barData);
+               /* var income = document.getElementById("bar").getContext("2d");
+                new Chart(income).Line(barData);*/
+
+
+
+
+            //    ----------------------------------------------------------
+
+
+                $(function () {
+                    $('#container').highcharts({
+                        chart: {
+                            zoomType: 'xy'
+                        },
+                        title: {
+                            text: `Temperature and Rainfall in ${vm.myCity}`
+                        },
+                       /* subtitle: {
+                            text: 'Source: WorldClimate.com'
+                        },*/
+                        xAxis: [{
+                            categories: vm.label,
+                            crosshair: true
+                        }],
+                        yAxis: [{ // Primary yAxis
+                            labels: {
+                                format: '{value}°C',
+                                style: {
+                                    color: Highcharts.getOptions().colors[1]
+                                }
+                            },
+                            title: {
+                                text: 'Temperature',
+                                style: {
+                                    color: Highcharts.getOptions().colors[1]
+                                }
+                            }
+                        }, { // Secondary yAxis
+                            title: {
+                                text: 'Rainfall',
+                                style: {
+                                    color: Highcharts.getOptions().colors[0]
+                                }
+                            },
+                            labels: {
+                                format: '{value} mm',
+                                style: {
+                                    color: Highcharts.getOptions().colors[0]
+                                }
+                            },
+                            opposite: true
+                        }],
+                        tooltip: {
+                            shared: true
+                        },
+                        legend: {
+                            layout: 'vertical',
+                            align: 'left',
+                            x: 120,
+                            verticalAlign: 'top',
+                            y: 100,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+                        },
+                        series: [{
+                            name: 'Rainfall',
+                            type: 'column',
+                            yAxis: 1,
+                            data: vm.yew,
+                            tooltip: {
+                                valueSuffix: ' mm'
+                            }
+
+                        }, {
+                            name: 'Temperature',
+                            type: 'spline',
+                            data: vm.xew,
+                            tooltip: {
+                                valueSuffix: '°C'
+                            }
+                        }],
+
+                        exporting: { enabled: false },
+
+                        credits: { enabled: false }
+
+                    });
+                });
+
+
+            //    ----------------------------------------------------------
+
+
 
             });
 
@@ -94,7 +187,6 @@ angular.module('weatherapp')
                 var sunset = new Date(res.sys.sunset * 1000);
                 vm.sunsetHours = sunset.getHours();
                 vm.sunsetMinutes = sunset.getMinutes();
-
                 console.log('other params');
                 console.log(vm.otherParams);
             });
