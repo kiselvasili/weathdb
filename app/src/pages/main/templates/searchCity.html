@@ -11,12 +11,14 @@
     Not found
 </div>
 
-<div ng-repeat="city in vm.cities" class="searchInfo">
-    <hr>
-    <div class="flexDirect">
-        <search-output-direct></search-output-direct>
+<div class="searchInfo">
+    <div ng-repeat="city in vm.cities">
+        <div class="flexDirect">
+            <search-output-direct></search-output-direct>
 
-        <add-delete-button-direct></add-delete-button-direct>
+            <add-delete-button-direct></add-delete-button-direct>
+        </div>
+
     </div>
 
 </div>

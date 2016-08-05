@@ -48,11 +48,32 @@
 }
 
 .flexDirect{
+    background: #f4f5ff;
     display: flex;
     flex-direction: row;
-    /*flex-wrap: wrap;*/
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     align-items: center;
+    border: 1px solid #44b8ff;
+    border-radius: 5px;
+    width: 300px;
+    height: 150px;
+    margin: 10px;
+}
+
+.searchInfo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+
+.globalFlexContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .extraParametersStyle{

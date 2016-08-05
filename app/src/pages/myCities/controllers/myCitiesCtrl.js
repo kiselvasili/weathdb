@@ -34,6 +34,8 @@ main.controller('myCitiesCtrl', function ($rootScope, $scope, AuthService, Searc
 
         });
 
+    vm.wow='wi-night-clear';
+
 
 
 });
