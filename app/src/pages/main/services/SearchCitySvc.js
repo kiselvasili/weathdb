@@ -9,7 +9,7 @@ angular.module('weatherapp')
                 getCityData: function (city) {
                     return $http({
                         method: 'GET',
-                        url: 'http://api.openweathermap.org/data/2.5/find',
+                        url: '//api.openweathermap.org/data/2.5/find',
                         params: {
                             q: city,
                             type: 'like',

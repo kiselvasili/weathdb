@@ -10,7 +10,7 @@ main
                     console.log(lon);
                     return $http({
                         method: 'GET',
-                        url: 'http://api.openweathermap.org/data/2.5/weather',
+                        url: '//api.openweathermap.org/data/2.5/weather',
                         params: {
                             lat: lat,
                             lon: lon,

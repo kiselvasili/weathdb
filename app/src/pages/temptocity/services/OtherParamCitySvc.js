@@ -7,7 +7,7 @@ angular.module('weatherapp')
         getOtherParams:function(cityId){
             return $http({
                 method: 'GET',
-                url: 'http://api.openweathermap.org/data/2.5/weather',
+                url: '//api.openweathermap.org/data/2.5/weather',
                 params:{
                     id:cityId,
                     appid:'feda7a0cb389cbaef6476c12d19e46bd'
