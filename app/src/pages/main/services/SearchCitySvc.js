@@ -3,7 +3,7 @@
  */
 angular.module('weatherapp')
     .factory('SearchCitySvc',
-        function ($http,API_OPEN_WEATHER) {
+        function ($http,API_OPEN_WEATHER,APPID_OPEN_WEATHER) {
             console.log('Hello2');
             return {
                 getCityData: function (city) {
@@ -13,7 +13,7 @@ angular.module('weatherapp')
                         params: {
                             q: city,
                             type: 'like',
-                            appid: 'feda7a0cb389cbaef6476c12d19e46bd'
+                            appid: APPID_OPEN_WEATHER.appid
                         }
                     })
                         .then(function (res) {

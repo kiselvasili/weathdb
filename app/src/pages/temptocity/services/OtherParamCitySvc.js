@@ -2,7 +2,7 @@
  * Created by Vasili Kisel on 6/9/2016.
  */
 angular.module('weatherapp')
-.factory('OtherParamCitySvc',function($http,API_OPEN_WEATHER){
+.factory('OtherParamCitySvc',function($http,API_OPEN_WEATHER,APPID_OPEN_WEATHER){
     return{
         getOtherParams:function(cityId){
             return $http({
@@ -10,7 +10,7 @@ angular.module('weatherapp')
                 url: API_OPEN_WEATHER.url+'/data/2.5/weather',
                 params:{
                     id:cityId,
-                    appid:'feda7a0cb389cbaef6476c12d19e46bd'
+                    appid:APPID_OPEN_WEATHER.appid
                 }
             }).then(function(res){
                 console.log(res);
