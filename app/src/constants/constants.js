@@ -4,4 +4,7 @@
 main
 .constant('API_ENDPOINT', {
     url: '/api'
+})
+.constant('API_OPEN_WEATHER', {
+    url: '//api.openweathermap.org'
 });

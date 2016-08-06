@@ -3,13 +3,13 @@
  */
 angular.module('weatherapp')
     .factory('SearchCitySvc',
-        function ($http) {
+        function ($http,API_OPEN_WEATHER) {
             console.log('Hello2');
             return {
                 getCityData: function (city) {
                     return $http({
                         method: 'GET',
-                        url: '//api.openweathermap.org/data/2.5/find',
+                        url: API_OPEN_WEATHER.url+'/data/2.5/find',
                         params: {
                             q: city,
                             type: 'like',

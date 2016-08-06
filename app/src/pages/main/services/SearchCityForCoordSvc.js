@@ -3,14 +3,14 @@
  */
 main
     .factory('SearchCityForCoordSvc',
-        function($http){
+        function($http,API_OPEN_WEATHER){
             return {
                 getCeoLocCity:function(lat,lon){
                     console.log(lat);
                     console.log(lon);
                     return $http({
                         method: 'GET',
-                        url: '//api.openweathermap.org/data/2.5/weather',
+                        url: API_OPEN_WEATHER.url+'/data/2.5/weather',
                         params: {
                             lat: lat,
                             lon: lon,

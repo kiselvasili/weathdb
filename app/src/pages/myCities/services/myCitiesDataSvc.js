@@ -3,12 +3,12 @@
  */
 main
 .factory('myCitiesDataSvc',
-    function($http){
+    function($http,API_OPEN_WEATHER){
         return{
             getmyCitiesData:function(id){
                 return $http({
                     method:'GET',
-                    url:'//api.openweathermap.org/data/2.5/group',
+                    url:API_OPEN_WEATHER.url+'/data/2.5/group',
                     params:{
                         id:id,
                         appid: 'feda7a0cb389cbaef6476c12d19e46bd'
