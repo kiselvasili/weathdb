@@ -17,7 +17,6 @@
     }*/
 
     .header-class{
-        border: black;
         background: linear-gradient(to top, rgba(245, 250, 255, 0.82), rgba(17, 170, 211, 0.82));
         display: flex;
         align-items: center;
@@ -34,14 +33,18 @@
     .loginRegLogout{
         display: flex;
         flex-direction: column;
-        /*border-bottom: white;*/
+
         padding: 0%;
     }
     .loginAndReg{
         padding: inherit;
         height: 70px;
         width: 100%;
-        border: green;
+        border-bottom: black;
 
+    }
+
+    .body-class{
+        min-width: 300px;
     }
 }

@@ -81,10 +81,14 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin: 20px 0 0 0;
 }
 
 .extraParametersTable{
-    margin: 20px;
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*justify-content: center;*/
+    margin: 10px auto;
 }
 
 .errorMessage{
@@ -94,4 +98,69 @@
     border-radius: 5px;
     width: 205px;
     background: rgba(255, 188, 191, 1);
+}
+
+#searchC{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tableFullDataTemp {
+
+    font-size: 14px;
+    border-collapse: collapse;
+    border-radius: 10px;
+    border-spacing: 0;
+    text-align: center;
+
+}
+td:first-child {
+    background: #AFCDE7;
+    color: white;
+    padding: 10px 20px;
+}
+td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+}
+td {
+    width: 200px;
+    background: #D8E6F3;
+}
+td:first-child {
+    width: 50px;
+    text-align: left;
+}
+
+tr:first-child td:first-child{
+    border-radius: 5px 0 0 0;
+}
+
+tr:first-child td:last-child{
+    border-radius: 0 5px 0 0;
+}
+
+tr:last-child td:first-child {
+    border-radius: 0 0 0 5px;
+}
+tr:last-child td:last-child {
+    border-radius: 0 0 5px 0;
+}
+
+/*id="container" style="width: 450px; height: 350px; margin: 0 auto"*/
+
+#containerDiogram{
+    width: 550px;
+    height: 350px;
+    margin: 0 auto;
+}
+
+.extraPropCountrName{
+    margin: 5px;
+}
+
+.extraPropCountrTemp{
+    margin: 5px;
 }

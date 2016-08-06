@@ -17,34 +17,7 @@
                 </div>
             </div>
 
-            <div class="tableToParameters">
-                <table class="tempTable">
-                    <tr>
-                        <td >Wind</td>
-                        <td >{{vm.otherParams.wind.speed}} m/s</td>
-                    </tr>
-                    <tr>
-                        <td >Cloudiness</td>
-                        <td >{{vm.otherParams.clouds.all}} %</td>
-                    </tr>
-                    <tr>
-                        <td >Pressure</td>
-                        <td >{{vm.otherParams.main.pressure}} hpa</td>
-                    </tr>
-                    <tr>
-                        <td >Humidity</td>
-                        <td >{{vm.otherParams.main.humidity}} %</td>
-                    </tr>
-                    <tr>
-                        <td>Sunrise</td>
-                        <td >{{vm.sunriseHours}}:{{vm.sunriseMinutes}}</td>
-                    </tr>
-                    <tr>
-                        <td>Sunset</td>
-                        <td>{{vm.sunsetHours}}:{{vm.sunsetMinutes}}</td>
-                    </tr>
-                </table>
-            </div>
+            <geo-loc-weath-direct></geo-loc-weath-direct>
         </div>
 
         <!--<div class="tempDiagram extraParametersTable">
@@ -52,7 +25,7 @@
             </canvas>
         </div>-->
 
-        <div id="container" style="min-width: 500px; height: 350px; margin: 0 auto"></div>
+        <div id="containerDiogram" ></div>
 
     </div>
 

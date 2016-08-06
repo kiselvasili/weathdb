@@ -31,7 +31,7 @@ angular.module('weatherapp')
                 });
 
                 vm.label = infToDay.map(x=>`${(new Date(x.dt * 1000)).getHours()}:00`);
-                vm.sunrise = new Date()
+                vm.sunrise = new Date();
                 //console.log(vm.xew);
                 console.log(vm.yew);
                 console.log(vm.xew);
@@ -86,12 +86,12 @@ angular.module('weatherapp')
 
 
                 $(function () {
-                    $('#container').highcharts({
+                    $('#containerDiogram').highcharts({
                         chart: {
                             zoomType: 'xy'
                         },
                         title: {
-                            text: `Temperature and Rainfall in ${vm.myCity}`
+                            text: ``
                         },
                        /* subtitle: {
                             text: 'Source: WorldClimate.com'
@@ -183,7 +183,6 @@ angular.module('weatherapp')
                 var sunrise = new Date(res.sys.sunrise * 1000);
                 vm.sunriseHours = sunrise.getHours();
                 vm.sunriseMinutes = sunrise.getMinutes();
-
                 var sunset = new Date(res.sys.sunset * 1000);
                 vm.sunsetHours = sunset.getHours();
                 vm.sunsetMinutes = sunset.getMinutes();
