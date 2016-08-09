@@ -2,8 +2,6 @@
 
 <hr class="justLine">
 
-
-
     <div class="extraParametersStyle">
         <div class="extraParametersTable">
 
@@ -20,20 +18,12 @@
             <geo-loc-weath-direct></geo-loc-weath-direct>
         </div>
 
-        <!--<div class="tempDiagram extraParametersTable">
-            <canvas id="bar" style="height: 300px;width: 500px">
-            </canvas>
-        </div>-->
-
         <div id="containerDiogram" ></div>
 
     </div>
 
-    <div  class="tempTo3Hours">
-        <div ng-repeat="tempDate in vm.listTemp">
-            <!--<p>{{tempDate.dt_txt}} : {{tempDate.dt}}</p>-->
-        </div>
-    </div>
+<chart-direct id="chart" obj="vm.obj"></chart-direct>
+
 
 
 
