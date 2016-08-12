@@ -197,26 +197,41 @@ apiRoutes.get('/getListCities',function(req, res){
 });
 
 apiRoutes.post('/findCityByName',(req,res)=>{
-    console.log(req.body);
     request('http://api.openweathermap.org/data/2.5/find?q='+req.body.city+'&type=like&appid=feda7a0cb389cbaef6476c12d19e46bd',
     //request({url:'http://api.openweathermap.org/data/2.5/find',form:{q:req.body.city,type:'like',appid:'feda7a0cb389cbaef6476c12d19e46bd'}},
         (error, response, body)=>{
-            console.log(body);
             res.json({success: true, cityInfo: JSON.parse(body)});
         });
-    //console.log(req.body.cityName);
 });
 
 apiRoutes.post('/findCityByCoord',(req,res)=>{
-    console.log(req.body);
     request('http://api.openweathermap.org/data/2.5/weather?lat='+req.body.lat+'&lon='+req.body.lon+'&appid=feda7a0cb389cbaef6476c12d19e46bd',
-        //request({url:'http://api.openweathermap.org/data/2.5/find',form:{q:req.body.city,type:'like',appid:'feda7a0cb389cbaef6476c12d19e46bd'}},
         (error, response, body)=>{
-            console.log(body);
             res.json({success: true, cityInfo: JSON.parse(body)});
         });
-    //console.log(req.body.cityName);
 });
+
+apiRoutes.post('/myCitiesGroup',(req,res)=>{
+    request('http://api.openweathermap.org/data/2.5/group?id='+req.body.id+'&appid=feda7a0cb389cbaef6476c12d19e46bd',
+        (error, response, body)=>{
+            res.json({success: true, cityInfo: JSON.parse(body)});
+        });
+});
+
+apiRoutes.post('/findCityById',(req,res)=>{
+    request('http://api.openweathermap.org/data/2.5/weather?id='+req.body.id+'&appid=feda7a0cb389cbaef6476c12d19e46bd',
+        (error, response, body)=>{
+            res.json({success: true, cityInfo: JSON.parse(body)});
+        });
+});
+
+apiRoutes.post('/findExtraPropCityById',(req,res)=>{
+    request('http://api.openweathermap.org/data/2.5/forecast?id='+req.body.id+'&appid=feda7a0cb389cbaef6476c12d19e46bd',
+        (error, response, body)=>{
+            res.json({success: true, cityInfo: JSON.parse(body)});
+        });
+});
+
 
 
 getToken = function (headers) {
