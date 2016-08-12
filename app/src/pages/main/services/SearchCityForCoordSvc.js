@@ -3,23 +3,22 @@
  */
 main
     .factory('SearchCityForCoordSvc',
-        function($http,API_OPEN_WEATHER,APPID_OPEN_WEATHER){
+        function($http,API_OPEN_WEATHER,APPID_OPEN_WEATHER,API_ENDPOINT){
             return {
                 getCeoLocCity:function(lat,lon){
                     console.log(lat);
                     console.log(lon);
                     return $http({
-                        method: 'GET',
-                        url: API_OPEN_WEATHER.url+'/data/2.5/weather',
-                        params: {
+                        method: 'POST',
+                        url: API_ENDPOINT.url+'/findCityByCoord',
+                        data: {
                             lat: lat,
-                            lon: lon,
-                            appid: APPID_OPEN_WEATHER.appid
+                            lon: lon
                         }
                     })
                         .then(function(res){
                             console.log(res);
-                            return res.data;
+                            return res.data.cityInfo;
                         })
                 }
             }

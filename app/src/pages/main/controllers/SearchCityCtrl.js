@@ -11,7 +11,7 @@ angular.module('weatherapp')
 
                 SearchCitySvc.getCityData(city)
                     .then(function (results) {
-
+                        console.log(results);
                         vm.count = results.count === 0 ? true : false;
                         vm.cities = results.list;
                     });

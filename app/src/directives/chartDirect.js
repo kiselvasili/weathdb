@@ -1,20 +1,20 @@
 /**
  * Created by Vasili Kisel on 8/8/2016.
  */
-main.directive('chartDirect',function(){
+main.directive('chartDirect',()=>{
     return {
         restrict: 'E',
         scope: { obj: '=' },
 
-        link: function (scope , element, attribute) {
+        link: (scope , element, attribute)=> {
             console.log(scope);
-            scope.$watch('obj',function(newVal){
+            scope.$watch('obj',(newVal)=>{
                 if(newVal){
                     console.log(scope.obj);
                     var infToDay = scope.obj.list.slice(0, 8);
 
                     var xew = infToDay.map(x=>(Math.round((x.main.temp - 273) * 100) / 100));
-                    var yew = infToDay.map(function (x) {
+                    var yew = infToDay.map((x)=> {
                         if (x.rain === undefined) {
                             return 0;
                         }
@@ -29,7 +29,7 @@ main.directive('chartDirect',function(){
                     });
                     var label = infToDay.map(x=>`${(new Date(x.dt * 1000)).getHours()}:00`);
 
-                    $(function () {
+                    $(()=> {
                         $('#containerDiogram').highcharts({
                             chart: {
                                 zoomType: 'xy'

@@ -10,9 +10,11 @@ var passport = require('passport');
 var config = require('./server/database');
 var User = require('./server/app/models/user'); // get the mongoose model
 var jwt = require('jwt-simple');
+var request = require("request");
 
 
 var port = process.env.PORT || 5000;
+var appid='feda7a0cb389cbaef6476c12d19e46bd';
 
 
 
@@ -58,6 +60,8 @@ require('./server/app/config/passport')(passport);
 
 // bundle our routes
 var apiRoutes = express.Router();
+
+
 
 // create a new user account (POST http://localhost:8080/api/signup)
 apiRoutes.post('/signup', function (req, res) {
@@ -190,6 +194,28 @@ apiRoutes.get('/getListCities',function(req, res){
             }
         })
     }
+});
+
+apiRoutes.post('/findCityByName',(req,res)=>{
+    console.log(req.body);
+    request('http://api.openweathermap.org/data/2.5/find?q='+req.body.city+'&type=like&appid=feda7a0cb389cbaef6476c12d19e46bd',
+    //request({url:'http://api.openweathermap.org/data/2.5/find',form:{q:req.body.city,type:'like',appid:'feda7a0cb389cbaef6476c12d19e46bd'}},
+        (error, response, body)=>{
+            console.log(body);
+            res.json({success: true, cityInfo: JSON.parse(body)});
+        });
+    //console.log(req.body.cityName);
+});
+
+apiRoutes.post('/findCityByCoord',(req,res)=>{
+    console.log(req.body);
+    request('http://api.openweathermap.org/data/2.5/weather?lat='+req.body.lat+'&lon='+req.body.lon+'&appid=feda7a0cb389cbaef6476c12d19e46bd',
+        //request({url:'http://api.openweathermap.org/data/2.5/find',form:{q:req.body.city,type:'like',appid:'feda7a0cb389cbaef6476c12d19e46bd'}},
+        (error, response, body)=>{
+            console.log(body);
+            res.json({success: true, cityInfo: JSON.parse(body)});
+        });
+    //console.log(req.body.cityName);
 });
 
 

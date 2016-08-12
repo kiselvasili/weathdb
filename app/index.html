@@ -41,19 +41,19 @@
 
         <ul class="loginRegLogout">
 
-            <li class="loginAndReg loginAndRegHover" ng-hide="stateStatus">
+            <li class="loginAndReg loginAndRegHover" ng-if="!stateStatus">
                 <a ui-sref="login"><i class="fa fa-sign-in icon"></i>Login</a>
             </li>
 
-            <li class="loginAndReg loginAndRegHover" ng-hide="stateStatus">
+            <li class="loginAndReg loginAndRegHover" ng-if="!stateStatus">
                 <a ui-sref="register"><i class="fa fa-user-plus icon"></i>Register</a>
             </li>
 
-            <li class="loginAndReg loginAndRegHover" ng-hide="!stateStatus">
+            <li class="loginAndReg loginAndRegHover" ng-if="stateStatus">
                 <a href="#" ng-click="signout()"><i class="fa fa-sign-out icon"></i>Logout</a>
             </li>
 
-            <li class="loginAndReg loginAndRegHover" ng-hide="!stateStatus">
+            <li class="loginAndReg loginAndRegHover" ng-if="stateStatus">
                 <a ui-sref="myCities"><i class="fa fa-user icon"></i>My cities</a>
             </li>
 
