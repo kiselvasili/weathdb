@@ -10,7 +10,7 @@ angular.module('weatherapp')
                 method: 'POST',
                 url: API_ENDPOINT.url+'/findExtraPropCityById',
                 data:{
-                    id:cityId,
+                    id:cityId
                 }
             }).then(function(res){
                 console.log(res);

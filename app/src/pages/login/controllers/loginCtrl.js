@@ -7,7 +7,7 @@ main.controller('loginCtrl', function ($scope, AuthService, $state) {
     $scope.login = function () {
         //console.log($scope.user);
         AuthService.login($scope.user).then(function (msg) {
-            $state.go('myCities');
+            $state.go('main');
         },function(errMsg){
             vm.errMsg=errMsg;
             console.log(errMsg);

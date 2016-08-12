@@ -1,31 +1,45 @@
 <div class="extraParametersStyle" ng-show="vm.otherParams">
-        <div class="extraParametersTable">
+    <div class="extraParametersTable">
 
-            <div class="tempTitle">
-                <div class="extraPropCountrName">
+        <div class="tempTitle">
+            <div class="extraPropCountrName">
                     {{vm.otherParams.sys.country}},{{vm.otherParams.name}}
-                </div>
-
-                <div class="extraPropCountrTemp">
-                    {{(vm.otherParams.main.temp-273).toFixed(1)}} °C
-                </div>
             </div>
 
-            <geo-loc-weath-direct></geo-loc-weath-direct>
+            <div class="extraPropCountrTemp">
+                    {{(vm.otherParams.main.temp-273).toFixed(1)}} °C
+            </div>
         </div>
 
-        <div id="containerDiogram"></div>
+        <geo-loc-weath-direct></geo-loc-weath-direct>
+
+    </div>
+
+    <chart-direct id="chart" obj="vm.obj"></chart-direct>
+
 </div>
 
-<chart-direct id="chart" obj="vm.obj"></chart-direct>
+<div class="searchButtoms">
 
-<div class="searchCityBig" >
-    <form ng-submit="search()" id="searchC">
-        <input ng-model="searchTerm" placeholder="Enter city" class="searchCity">
-        <button type="submit" class="searchButton">
-            <i class="fa fa-search"></i>
-        </button>
-    </form>
+    <div class="searchCityBig"  ng-show="!vm.otherParams">
+        <form ng-submit="geolocation()">
+            <button type="submit" class="searchButton geoLocationButton">
+                <i class="fa fa-map-marker"></i>
+            </button>
+        </form>
+    </div>
+
+
+
+    <div class="searchCityBig" >
+        <form ng-submit="search()" id="searchC">
+            <input ng-model="searchTerm" placeholder="Enter city" class="searchCity">
+            <button type="submit" class="searchButton searchButtonHover">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+
 </div>
 
 <div ng-if="vm.count">

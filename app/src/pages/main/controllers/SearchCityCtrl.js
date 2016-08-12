@@ -37,31 +37,34 @@ angular.module('weatherapp')
                 }
 
             };
-            navigator.geolocation.getCurrentPosition((a) => {
-                vm.lat = a.coords.latitude;
-                vm.lon = a.coords.longitude;
-                SearchCityForCoordSvc.getCeoLocCity(vm.lat, vm.lon)
-                    .then(function (res) {
-                        console.log(res);
-                        vm.otherParams = res;
-                        var sunrise = new Date(res.sys.sunrise * 1000);
-                        vm.sunriseHours = sunrise.getHours();
-                        vm.sunriseMinutes = sunrise.getMinutes();
-                        var sunset = new Date(res.sys.sunset * 1000);
-                        vm.sunsetHours = sunset.getHours();
-                        vm.sunsetMinutes = sunset.getMinutes();
-                        console.log('other params');
-                        console.log(vm.otherParams);
-                        vm.cityId = res.id;
-                        console.log(vm.cityId);
-                        TempCitySvc.getFullData(vm.cityId)
-                            .then(function (res) {
-                                vm.obj = res;
+
+            $scope.geolocation=function(){
+                navigator.geolocation.getCurrentPosition((a) => {
+                    vm.lat = a.coords.latitude;
+                    vm.lon = a.coords.longitude;
+                    SearchCityForCoordSvc.getCeoLocCity(vm.lat, vm.lon)
+                        .then(function (res) {
+                            console.log(res);
+                            vm.otherParams = res;
+                            var sunrise = new Date(res.sys.sunrise * 1000);
+                            vm.sunriseHours = sunrise.getHours();
+                            vm.sunriseMinutes = sunrise.getMinutes();
+                            var sunset = new Date(res.sys.sunset * 1000);
+                            vm.sunsetHours = sunset.getHours();
+                            vm.sunsetMinutes = sunset.getMinutes();
+                            console.log('other params');
+                            console.log(vm.otherParams);
+                            vm.cityId = res.id;
+                            console.log(vm.cityId);
+                            TempCitySvc.getFullData(vm.cityId)
+                                .then(function (res) {
+                                    vm.obj = res;
+                                })
+                        })
+                });
+            };
 
 
-                            })
-                    })
-            });
 
 
         }

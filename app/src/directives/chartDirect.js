@@ -30,7 +30,7 @@ main.directive('chartDirect',()=>{
                     var label = infToDay.map(x=>`${(new Date(x.dt * 1000)).getHours()}:00`);
 
                     $(()=> {
-                        $('#containerDiogram').highcharts({
+                        $('#chart').highcharts({
                             chart: {
                                 zoomType: 'xy'
                             },
