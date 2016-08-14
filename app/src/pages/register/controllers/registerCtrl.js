@@ -7,19 +7,18 @@ main
         var vm=this;
         $scope.register = function () {
             console.log($scope.user);
-            AuthService.register($scope.user).then(function (msg) {
-                console.log(msg);
-                $state.go('login');
-            },function(errMsg){
+            AuthService.register($scope.user)
+                .then(function (msg) {
+                    console.log(msg);
+                    $state.go('login');
+                }).catch(function(errMsg){
                 console.log(errMsg);
-                vm.errMsg=errMsg;
+                vm.errMsg=errMsg.data.msg;
                     $scope.user.nickname='';
                     $scope.user.password='';
                     $scope.user.name='';
 
-            }
-
-            );
+            });
         };
 
     });

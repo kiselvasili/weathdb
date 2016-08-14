@@ -32,14 +32,18 @@
 
 
     <div class="searchCityBig" >
-        <form ng-submit="search()" id="searchC">
-            <input ng-model="searchTerm" placeholder="Enter city" class="searchCity">
+        <form ng-submit="vm.search()" id="searchC">
+            <input ng-model="vm.searchTerm" placeholder="Enter city" class="searchCity">
             <button type="submit" class="searchButton searchButtonHover">
                 <i class="fa fa-search"></i>
             </button>
         </form>
     </div>
 
+</div>
+
+<div ng-hide="!vm.msgErr">
+    vvedite city
 </div>
 
 <div ng-if="vm.count">

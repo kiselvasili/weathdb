@@ -42,20 +42,14 @@ console.log('срабол юс сервис')
 
 
         var register = function (user) {
-            return $q(function (resolve, reject) {
-                $http({
+            return $http({
                     method: 'POST',
                     url: API_ENDPOINT.url + '/signup',
                     data: user
                 })
                     .then(function (result) {
-                        if (result.data.success) {
-                            resolve(result.data.msg);
-                        } else {
-                            reject(result.data.msg);
-                        }
+                        return result.data;
                     });
-            });
         };
 
 
