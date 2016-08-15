@@ -1,7 +1,7 @@
 /**
  * Created by Vasili Kisel on 6/9/2016.
  */
-export default function OtherParamCitySvc($http, API_ENDPOINT) {
+export default /*@ngInject*/ function OtherParamCitySvc($http, API_ENDPOINT) {
     return {
         getOtherParams: function (cityId) {
             return $http({

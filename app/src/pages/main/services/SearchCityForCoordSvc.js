@@ -1,7 +1,7 @@
 /**
  * Created by Vasili Kisel on 8/6/2016.
  */
-export default function SearchCityForCoordSvc($http, API_ENDPOINT) {
+export default /*@ngInject*/ function SearchCityForCoordSvc($http, API_ENDPOINT) {
     return {
         getCeoLocCity: function (lat, lon) {
             console.log(lat);

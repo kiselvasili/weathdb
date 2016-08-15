@@ -1,7 +1,7 @@
 /**
  * Created by Vasili Kisel on 7/30/2016.
  */
-export default  function DeleteCitiesSvc($http, API_ENDPOINT, AuthService) {
+export default /*@ngInject*/ function DeleteCitiesSvc($http, API_ENDPOINT, AuthService) {
     return {
         deleteCitiesUser: function (id) {
             console.log('deleteSvc');

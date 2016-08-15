@@ -1,7 +1,7 @@
 /**
  * Created by Vasili Kisel on 5/4/2016.
  */
-export default  function SearchCitySvc($http, API_ENDPOINT) {
+export default /*@ngInject*/ function SearchCitySvc($http, API_ENDPOINT) {
     return {
         getCityData: function (city) {
             return $http({

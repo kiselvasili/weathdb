@@ -1,13 +1,14 @@
 
-export default function appRouting($stateProvider, $urlRouterProvider, cfpLoadingBarProvider) {
+export default /*@ngInject*/ function appRouting($stateProvider, $urlRouterProvider, cfpLoadingBarProvider) {
     cfpLoadingBarProvider.includeSpinner = false;
+    //cfpLoadingBarProvider.color = '#3100dd';
 
     $urlRouterProvider.otherwise('/Search');
 
     $stateProvider
         .state('main', {
             url: '/Search',
-            templateUrl: 'src/pages/main/templates/searchCity.html',
+            template: require('./pages/main/templates/searchCity.html'),
             controller: 'SearchCityCtrl',
             controllerAs: 'vm',
             data: {
@@ -16,7 +17,7 @@ export default function appRouting($stateProvider, $urlRouterProvider, cfpLoadin
         })
         .state('login', {
             url: '/login',
-            templateUrl: 'src/pages/login/templates/login.html',
+            template: require('./pages/login/templates/login.html'),
             controller: 'loginCtrl',
             controllerAs: 'vm',
             data: {
@@ -25,7 +26,7 @@ export default function appRouting($stateProvider, $urlRouterProvider, cfpLoadin
         })
         .state('myCities', {
             url: '/myCities',
-            templateUrl: 'src/pages/myCities/templates/myCities.html',
+            template: require('./pages/myCities/templates/myCities.html'),
             controller: 'myCitiesCtrl',
             controllerAs: 'vm',
             data: {
@@ -34,7 +35,7 @@ export default function appRouting($stateProvider, $urlRouterProvider, cfpLoadin
         })
         .state('register', {
             utl: '/register',
-            templateUrl: 'src/pages/register/templates/register.html',
+            template: require('./pages/register/templates/register.html'),
             controller: 'registerCtrl',
             controllerAs: 'vm',
             data: {
@@ -43,7 +44,7 @@ export default function appRouting($stateProvider, $urlRouterProvider, cfpLoadin
         })
         .state('TempToOneCity', {
             url: '/:cityId/cityweather',
-            templateUrl: 'src/pages/temptocity/templates/temptocity.html',
+            template: require('./pages/temptocity/templates/temptocity.html'),
             controller: 'TempCityCtrl',
             controllerAs: 'vm',
             data: {

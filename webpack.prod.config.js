@@ -4,7 +4,6 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
 
 module.exports = {
-    devtool: 'eval-source-map',
     entry: __dirname + '/app',
     output: {
         path: __dirname + '/build',
@@ -12,20 +11,14 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['', '.js']
-    },
-
-    devServer: {
-        port: 8080,
-        colors: true,
-        hot: true
+      extensions: ['', '.js']
     },
 
     module: {
         loaders: [
             {
                 test: /\.js$/,
-                loader: 'babel',
+                loaders: ['ng-annotate','babel'],
                 exclude: /node_modules/
             },
             {
@@ -38,20 +31,25 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract('style!css?sourceMap')
+                loader: ExtractTextPlugin.extract('css')
             }
         ]
     },
 
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify('production')
+            }
+        }),
         new HtmlWebpackPlugin({
             template: __dirname + '/app/index.html'
         }),
+        new webpack.optimize.UglifyJsPlugin(),
         new CopyWebpackPlugin([{
             from: './app/img',
             to: 'img'
         }]),
-        new ExtractTextPlugin('bundle.css')
+       new ExtractTextPlugin('bundle.css')
     ]
 };

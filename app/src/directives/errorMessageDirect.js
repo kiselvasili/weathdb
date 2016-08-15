@@ -4,6 +4,6 @@
 export default function errorMessageDirect() {
     return {
         restrict: 'E',
-        templateUrl: 'src/templateDirective/errorMsgCard.html'
+        template: require('../templateDirective/errorMsgCard.html')
     }
 }

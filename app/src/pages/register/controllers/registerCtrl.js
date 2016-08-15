@@ -1,7 +1,7 @@
 /**
  * Created by Vasili Kisel on 7/24/2016.
  */
-export default function registerCtrl($scope, AuthService, $state) {
+export default /*@ngInject*/ function registerCtrl($scope, AuthService, $state) {
     var vm = this;
     $scope.register = function () {
         console.log($scope.user);

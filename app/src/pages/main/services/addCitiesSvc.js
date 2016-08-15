@@ -1,7 +1,7 @@
 /**
  * Created by Vasili Kisel on 7/29/2016.
  */
-export default function AddCitiesSvc($http, API_ENDPOINT, AuthService) {
+export default /*@ngInject*/ function AddCitiesSvc($http, API_ENDPOINT, AuthService) {
     return {
         addCitiesUser: function (id) {
             return $http({

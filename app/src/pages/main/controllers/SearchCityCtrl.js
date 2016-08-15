@@ -1,7 +1,7 @@
 /**
  * Created by Vasili Kisel on 5/4/2016.
  */
-export default function SearchCityCtrl($q, $scope, $state, SearchCityForCoordSvc, SearchCitySvc, $rootScope, AddCitiesSvc, DeleteCitiesSvc, AuthService, GetCitiesCollectionSvc, TempCitySvc) {
+export default /*@ngInject*/ function SearchCityCtrl($q, $scope, $state, SearchCityForCoordSvc, SearchCitySvc, $rootScope, AddCitiesSvc, DeleteCitiesSvc, AuthService, GetCitiesCollectionSvc, TempCitySvc) {
     var vm = this;
 
     vm.search = function () {

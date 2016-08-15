@@ -1,7 +1,7 @@
 /**
  * Created by Vasili Kisel on 7/19/2016.
  */
-export default function myCitiesCtrl($rootScope, $scope, AuthService, SearchCitySvc, $state,GetCitiesCollectionSvc,myCitiesDataSvc,AddCitiesSvc, DeleteCitiesSvc) {
+export default /*@ngInject*/ function myCitiesCtrl($rootScope, $scope, AuthService, SearchCitySvc, $state,GetCitiesCollectionSvc,myCitiesDataSvc,AddCitiesSvc, DeleteCitiesSvc) {
     var vm = this;
 
     GetCitiesCollectionSvc.getCitieslist()

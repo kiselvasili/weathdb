@@ -19,8 +19,8 @@ var appid='feda7a0cb389cbaef6476c12d19e46bd';
 
 
 app.set('port', port);
-app.use(express.static(__dirname + '/app'));
-app.use('/node_modules', express.static(__dirname + '/node_modules'));
+app.use(express.static(__dirname + '/build'));
+//app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
 
 app.use(bodyParser.urlencoded({extended: false}));

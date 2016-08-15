@@ -2,7 +2,7 @@
  * Created by Vasili Kisel on 7/22/2016.
  */
 
-export default function AuthService($q, $http, API_ENDPOINT) {
+export default /*@ngInject*/ function AuthService($q, $http, API_ENDPOINT) {
         var LOCAL_TOKEN_KEY = 'yourTokenKey';
         var isAuthenticated = false;
         var authToken;

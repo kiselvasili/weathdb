@@ -1,7 +1,7 @@
 /**
  * Created by Vasili Kisel on 7/19/2016.
  */
-export default function loginCtrl($scope, AuthService, $state) {
+export default /*@ngInject*/ function loginCtrl($scope, AuthService, $state) {
 
     var vm = this;
     $scope.login = function () {

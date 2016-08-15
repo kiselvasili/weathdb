@@ -1,7 +1,7 @@
 /**
  * Created by Vasili Kisel on 7/29/2016.
  */
-export default function GetCitiesCollectionSvc($http, API_ENDPOINT, AuthService) {
+export default /*@ngInject*/ function GetCitiesCollectionSvc($http, API_ENDPOINT, AuthService) {
     return {
         getCitieslist: function () {
             return $http({

@@ -1,13 +1,11 @@
 /**
  * Created by Vasili Kisel on 5/23/2016.
  */
-export default function TempCityCtrl($state, $stateParams, TempCitySvc, OtherParamCitySvc) {
+export default /*@ngInject*/ function TempCityCtrl($state, $stateParams, TempCitySvc, OtherParamCitySvc) {
     var vm = this;
     TempCitySvc.getFullData($stateParams.cityId)
         .then(function (res) {
-
             vm.obj = res;
-
         });
 
     OtherParamCitySvc.getOtherParams($stateParams.cityId)

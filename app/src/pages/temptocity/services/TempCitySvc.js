@@ -1,8 +1,7 @@
 /**
  * Created by Vasili Kisel on 6/1/2016.
  */
-export default function TempCitySvc($http, API_ENDPOINT) {
-    console.log('Hello5');
+export default /*@ngInject*/ function TempCitySvc($http, API_ENDPOINT) {
     return {
         getFullData: function (cityId) {
             return $http({
