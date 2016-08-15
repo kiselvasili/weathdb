@@ -1,3 +1,15 @@
+html {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+select, button, textarea, input {
+    font-size: 100%;
+}
+
+button, a {
+    cursor: pointer;
+}
+
 /*links-------------------------*/
 a{
     text-decoration: none;

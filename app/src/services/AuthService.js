@@ -1,13 +1,25 @@
 /**
  * Created by Vasili Kisel on 7/22/2016.
  */
-main
-    .service('AuthService', function ($q, $http, API_ENDPOINT,$rootScope) {
+
+export default function AuthService($q, $http, API_ENDPOINT) {
         var LOCAL_TOKEN_KEY = 'yourTokenKey';
         var isAuthenticated = false;
         var authToken;
-        //var API_ENDPOINT='http://localhost:8080/api';
-console.log('срабол юс сервис')
+
+        loadUserCredentials();
+
+        return {
+            login: login,
+            register: register,
+            logout: logout,
+            isAuthenticated: function () {
+                return isAuthenticated;
+            },
+            token: function () {
+                return authToken;
+            }
+        };
 
         function loadUserCredentials() {
             console.log('сработал loadUserCredentials');
@@ -18,20 +30,17 @@ console.log('срабол юс сервис')
             }
         }
 
-
         function storeUserCredentials(token) {
             window.localStorage.setItem(LOCAL_TOKEN_KEY, token);
             useCredentials(token);
         }
 
-
         function useCredentials(token) {
             isAuthenticated = true;
-            console.log('isAuthenticated '+isAuthenticated);
+            console.log('isAuthenticated ' + isAuthenticated);
             authToken = token;
             //$http.defaults.headers.common.Authorization = authToken;
         }
-
 
         function destroyUserCredentials() {
             authToken = undefined;
@@ -40,20 +49,18 @@ console.log('срабол юс сервис')
             window.localStorage.removeItem(LOCAL_TOKEN_KEY);
         }
 
-
-        var register = function (user) {
+        function register(user) {
             return $http({
-                    method: 'POST',
-                    url: API_ENDPOINT.url + '/signup',
-                    data: user
-                })
-                    .then(function (result) {
-                        return result.data;
-                    });
-        };
+                method: 'POST',
+                url: API_ENDPOINT.url + '/signup',
+                data: user
+            })
+                .then(function (result) {
+                    return result.data;
+                });
+        }
 
-
-        var login = function (user) {
+        function login(user) {
             //console.log(user);
             return $q(function (resolve, reject) {
                 $http({
@@ -75,26 +82,9 @@ console.log('срабол юс сервис')
                         }
                     })
             });
-        };
+        }
 
-
-        var logout = function () {
+        function logout() {
             destroyUserCredentials();
-        };
-
-        loadUserCredentials();
-
-
-        return {
-            login: login,
-            register: register,
-            logout: logout,
-            isAuthenticated: function () {
-                return isAuthenticated;
-            },
-            token:function(){
-                return authToken;
-            }
-        };
-
-    });
+        }
+    };

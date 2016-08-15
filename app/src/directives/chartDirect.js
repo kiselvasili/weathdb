@@ -1,15 +1,15 @@
 /**
  * Created by Vasili Kisel on 8/8/2016.
  */
-main.directive('chartDirect',()=>{
+export default ()=> {
     return {
         restrict: 'E',
-        scope: { obj: '=' },
+        scope: {obj: '='},
 
-        link: (scope , element, attribute)=> {
+        link: (scope, element, attribute)=> {
             console.log(scope);
-            scope.$watch('obj',(newVal)=>{
-                if(newVal){
+            scope.$watch('obj', (newVal)=> {
+                if (newVal) {
                     console.log(scope.obj);
                     var infToDay = scope.obj.list.slice(0, 8);
 
@@ -29,8 +29,7 @@ main.directive('chartDirect',()=>{
                     });
                     var label = infToDay.map(x=>`${(new Date(x.dt * 1000)).getHours()}:00`);
 
-                    $(()=> {
-                        $('#chart').highcharts({
+                    Highcharts.chart(element[0], {
                             chart: {
                                 zoomType: 'xy'
                             },
@@ -105,12 +104,9 @@ main.directive('chartDirect',()=>{
                             credits: {enabled: false}
 
                         });
-                    });
+                    //});
                 }
             });
-
-
-
         }
     }
-});
+}

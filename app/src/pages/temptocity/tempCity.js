@@ -1,7 +1,7 @@
 /**
  * Created by Vasili Kisel on 5/23/2016.
  */
-angular.module('weatherapp')
+angular.module('weatherapp.pages')
     .config(function ($stateProvider) {
         $stateProvider
             .state('TempToOneCity', {
