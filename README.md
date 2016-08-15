@@ -1,4 +1,4 @@
-[https://warm-waters-45108.herokuapp.com](DEMO)
+[DEMO](https://warm-waters-45108.herokuapp.com)
 
 ## Installing
 
@@ -9,8 +9,6 @@
 After you have installed all dependencies you can now run the app with:
 ```bash
 npm start
-
-npm run api // run api localhost:5000
 ```
 
 go to [http://localhost:8080](http://localhost:8080) in your browser.
