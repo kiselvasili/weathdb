@@ -29,7 +29,7 @@ export default angular.module('weatherapp', [uiRouter, angularLoadingBar, appPag
     .run(app)
     .config(appRoutes)
     .constant('API_ENDPOINT', {
-        url: 'http://localhost:5000/api'
+        url: '//warm-waters-45108.herokuapp.com/api' // '//localhost:5000/api'
     })
     .factory('AuthService', AuthService)
     .controller('AppCtrl', AppCtrl)

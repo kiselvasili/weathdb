@@ -5,7 +5,7 @@ var webpack = require('webpack');
 
 module.exports = {
     devtool: 'eval-source-map',
-    entry: __dirname + '/app',
+    entry: __dirname + '/app', //__dirname + '/app',
     output: {
         path: __dirname + '/build',
         filename: './bundle.js'
